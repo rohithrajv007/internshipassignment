@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Autonomous Hiring Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+<!-- Header -->
+<div class="p-4 bg-white shadow-sm border-b">
+    <h1 class="text-2xl font-semibold text-gray-800">Autonomous Hiring Dashboard</h1>
+</div>
+
+<!-- Main Content -->
+<div class="p-6">
+
+    <div class="overflow-x-auto bg-white shadow-md rounded-lg border border-gray-200">
+        <table class="min-w-full text-sm text-gray-700">
+            <thead class="bg-gray-50 text-gray-600 font-medium">
+                <tr>
+                    <th class="px-4 py-3 text-left">Candidate</th>
+                    <th class="px-4 py-3 text-left">Backend Score</th>
+                    <th class="px-4 py-3 text-left">Backend Rec</th>
+                    <th class="px-4 py-3 text-left">AI Score</th>
+                    <th class="px-4 py-3 text-left">AI Rec</th>
+                    <th class="px-4 py-3 text-left">Final Backend</th>
+                    <th class="px-4 py-3 text-left">Final AI</th>
+                    <th class="px-4 py-3 text-left">Answered</th>
+                    <th class="px-4 py-3 text-left">Total Qs</th>
+                    <th class="px-4 py-3 text-left">Shortlist</th>
+                </tr>
+            </thead>
+
+            <tbody class="divide-y divide-gray-200">
+                {% for c in candidates %}
+                <tr>
+                    <td class="px-4 py-3">{{ c['candidate_name'] }}</td>
+                    <td class="px-4 py-3">{{ c['backend_score'] or '-' }}</td>
+                    <td class="px-4 py-3">{{ c['backend_recommendation'] or '-' }}</td>
+                    <td class="px-4 py-3">{{ c['ai_score'] or '-' }}</td>
+                    <td class="px-4 py-3">{{ c['ai_recommendation'] or '-' }}</td>
+                    <td class="px-4 py-3">{{ c['final_backend_score'] or '-' }}</td>
+                    <td class="px-4 py-3">{{ c['final_ai_score'] or '-' }}</td>
+                    <td class="px-4 py-3">{{ c['answered_count'] }}</td>
+                    <td class="px-4 py-3">{{ c['total_questions'] }}</td>
+                    <td class="px-4 py-3">{{ c['shortlist_status'] or '-' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="/static/dashboard.js"></script>
+
+</body>
+</html>
