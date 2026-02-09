@@ -1,8 +1,6 @@
-Here’s your **complete `README.md` file** in one block of Markdown that you can copy-paste directly into your repo — cleanly formatted and with no missing code blocks.
 
----
 
-### ✅ Full `README.md` (paste this as is)
+### ✅ Full `README.md` 
 
 ````markdown
 # Autonomous Hiring Pipeline
